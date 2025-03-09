@@ -1,0 +1,28 @@
+spring.application.name=TRANSACTION-SERVICE
+#spring.datasource.url= jdbc:postgresql://localhost:5432/retail_banking
+#spring.datasource.username= postgres
+#spring.datasource.password= postgres
+
+#H2 configuration
+
+spring.datasource.url=jdbc:h2:mem:test
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.h2.console.enabled=true
+
+
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation= true
+spring.jpa.generate-ddl=true
+spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.show-sql=true
+
+#Hibernate ddl auto (create, create-drop, validate, update)
+spring.jpa.hibernate.ddl-auto= update
+spring.session.store-type=none #default inmemory session management
+
+spring.profiles.active=dev
+
+spring.jackson.default-property-inclusion=non-null
