@@ -1,0 +1,23 @@
+# groups:
+# - name: Example
+#   rules:
+
+#     - alert: InstanceDown
+#       expr: up == 0
+#       for: 15s
+#       labels:
+#         severity: critical
+#       annotations:
+#         summary: "Instance [{{ $labels.instance }}] down"
+#         description: "[{{ $labels.instance }}] of job {{ $labels.job }} has been down for more than 15 seconds."
+groups:
+  - name: MicroserviceDownAlerts
+    rules:
+      - alert: MicroserviceDown
+        expr: up == 0
+        for: 10s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Microservice [{{ $labels.job }}] down"
+          description: "The [{{ $labels.job }}] microservice has been down for more than 10 seconds."
